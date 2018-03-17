@@ -2,7 +2,7 @@
 <!--
   ~ MIT License
   ~
-  ~ Copyright (c) 2017 Alibaba Group
+  ~ Copyright (c) 2018 Alibaba Group
   ~
   ~ Permission is hereby granted, free of charge, to any person obtaining a copy
   ~ of this software and associated documentation files (the "Software"), to deal
@@ -24,46 +24,27 @@
   -->
 
 <VHLayout
-        action="action"
-        orientation="V"
-        autoDimDirection="X"
-        autoDimX="231"
-        autoDimY="325"
-        dataTag="container"
         flag="flag_exposure|flag_clickable"
-        layoutHeight="wrap_content"
+        orientation="V"
         layoutWidth="match_parent"
-        background="white">
-
-    <FrameLayout
+        layoutHeight="match_parent"
+>
+    <VText
+            text="Title: orientation = H | firstSpace = 10rp | lastSpace = 10rp"
+            textSize="12"
+            textColor="#333333"
+            background="#008899"
             layoutWidth="match_parent"
-            layoutHeight="wrap_content"
-            autoDimDirection="X"
-            autoDimX="1"
-            autoDimY="1">
-        <NImage
-                id="1"
-                src="${imgUrl}"
-                layoutHeight="match_parent"
-                layoutWidth="match_parent"/>
-    </FrameLayout>
-    <VText
-            text="${title}"
-            layoutHeight="wrap_content"
-            layoutMarginTop="20rp"
-            layoutMarginLeft="25rp"
-            layoutWidth="wrap_content"
-            maxLines="1"
-            textColor="${style.onePlusThreetextColor}"
-            textSize="11"/>
+            layoutHeight="20" />
 
-    <VText
-            text="${price}"
-            layoutHeight="wrap_content"
-            layoutMarginTop="4rp"
-            layoutMarginBottom="4rp"
-            layoutMarginLeft="25rp"
-            layoutWidth="wrap_content"
-            textColor="#FF0036"
-            textSize="11"/>
+    <Scroller
+            dataTag="${items}"
+            firstSpace="10rp"
+            lastSpace="10rp"
+            lineSpace="10rp"
+            span="5rp"
+            orientation="H"
+            layoutWidth="match_parent"
+            layoutHeight="285rp" />
+
 </VHLayout>

@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Alibaba Group
+ * Copyright (c) 2018 Alibaba Group
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,15 +22,27 @@
  * SOFTWARE.
  */
 
-package com.libra.virtualview.tool;
+package com.libra.virtualview.compiler.valueparser;
 
-import java.util.List;
+import com.libra.TextUtils;
+import com.libra.virtualview.common.IDataLoaderCommon;
+import com.libra.virtualview.compiler.parser.Parser.AttrItem;
 
-/**
- * Created by longerian on 2017/5/20.
- */
-public class CompileModel {
+public class DataModeValueParser extends NumberValueParser {
+	public boolean parser(AttrItem value) {
+		boolean ret = true;
 
-    public List<String> template;
+        if (TextUtils.equals(value.mStrValue, "set")) {
+            value.setIntValue(IDataLoaderCommon.MODE_SET);
+        } else if (TextUtils.equals(value.mStrValue, "append")) {
+            value.setIntValue(IDataLoaderCommon.MODE_APPEND);
+        } else {
+            ret = super.parser(value);
+            if (ret && (value.getmIntValue() != IDataLoaderCommon.MODE_SET && value.getmIntValue() != IDataLoaderCommon.MODE_APPEND)) {
+                ret = false;
+            }
+        }
 
+        return ret;
+	}
 }

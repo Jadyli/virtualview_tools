@@ -25,31 +25,39 @@
 
 <VHLayout
         flag="flag_exposure|flag_clickable"
-        action="action"
         orientation="V"
-        gravity="v_center"
-        layoutWidth="wrap_content"
-        layoutHeight="wrap_content"
-        paddingTop="10"
-        paddingRight="10"
-        paddingBottom="10"
-        paddingLeft="10"
+        layoutWidth="match_parent"
+        layoutHeight="match_parent"
 >
-    <NImage
-            id="1"
-            layoutGravity="h_center"
-            src="${imgUrl}"
-            scaleType="center_crop"
-            layoutMarginBottom="6"
-            layoutWidth="96rp"
-            layoutHeight="96rp"/>
+    <!--<VText-->
+            <!--text="Title: orientation = V"-->
+            <!--textSize="12"-->
+            <!--textColor="#333333"-->
+            <!--background="#008899"-->
+            <!--layoutWidth="match_parent"-->
+            <!--layoutHeight="20" />-->
+
+    <!--<Slider-->
+            <!--dataTag="${items}"-->
+            <!--orientation="V"-->
+            <!--itemWidth="227rp"-->
+            <!--layoutWidth="match_parent"-->
+            <!--layoutHeight="285rp" />-->
+
     <VText
-            id="2"
-            layoutGravity="h_center"
-            text="${title}"
+            text="Title: orientation = H"
             textSize="12"
-            textColor="@{${titleColor} ? ${titleColor} : #333333 }"
-            layoutWidth="wrap_content"
-            layoutHeight="wrap_content"/>
+            textColor="#333333"
+            background="#008899"
+            layoutWidth="match_parent"
+            layoutHeight="20" />
+
+    <Slider
+            dataTag="${items}"
+			span="10rp"
+            orientation="H"
+            itemWidth="227rp"
+            layoutWidth="match_parent"
+            layoutHeight="285rp" />
 
 </VHLayout>

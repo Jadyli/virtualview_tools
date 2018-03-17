@@ -24,39 +24,45 @@
   -->
 
 <VHLayout
-        flag="flag_exposure|flag_clickable"
+        action="action"
         orientation="V"
+        autoDimDirection="X"
+        autoDimX="231"
+        autoDimY="325"
+        dataTag="container"
+        flag="flag_exposure|flag_clickable"
+        layoutHeight="wrap_content"
         layoutWidth="match_parent"
-        layoutHeight="match_parent"
->
-    <!--<VText-->
-            <!--text="Title: orientation = V"-->
-            <!--textSize="12"-->
-            <!--textColor="#333333"-->
-            <!--background="#008899"-->
-            <!--layoutWidth="match_parent"-->
-            <!--layoutHeight="20" />-->
+        background="white">
 
-    <!--<Slider-->
-            <!--dataTag="${items}"-->
-            <!--orientation="V"-->
-            <!--itemWidth="227rp"-->
-            <!--layoutWidth="match_parent"-->
-            <!--layoutHeight="285rp" />-->
+    <FrameLayout
+            layoutWidth="match_parent"
+            layoutHeight="wrap_content"
+            autoDimDirection="X"
+            autoDimX="1"
+            autoDimY="1">
+        <NImage
+                id="1"
+                src="${imgUrl}"
+                layoutHeight="match_parent"
+                layoutWidth="match_parent"/>
+    </FrameLayout>
+    <VText
+            text="${title}"
+            layoutHeight="wrap_content"
+            layoutMarginTop="20rp"
+            layoutMarginLeft="25rp"
+            layoutWidth="wrap_content"
+            textColor="${style.onePlusThreetextColor}"
+            textSize="11"/>
 
     <VText
-            text="Title: orientation = H"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
-
-    <Slider
-            dataTag="${items}"
-            orientation="H"
-            itemWidth="227rp"
-            layoutWidth="match_parent"
-            layoutHeight="285rp" />
-
+            text="${price}"
+            layoutHeight="wrap_content"
+            layoutMarginTop="4rp"
+            layoutMarginBottom="4rp"
+            layoutMarginLeft="25rp"
+            layoutWidth="wrap_content"
+            textColor="#FF0036"
+            textSize="11"/>
 </VHLayout>

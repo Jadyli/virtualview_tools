@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2017 Alibaba Group
+ * Copyright (c) 2018 Alibaba Group
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -51,6 +51,14 @@ public abstract class LayoutParser extends ViewBaseParser {
                             Log.e(TAG, "borderWidth value error:" + value);
                         } else {
                             Log.d(TAG, "parse borderWidth:" + value);
+                        }
+                        break;
+                    case StringBase.STR_ID_borderRadius:
+                        if (!parseFloat(value)) {
+                            ret = CONVERT_RESULT_FAILED;
+                            Log.e(TAG, "borderRadius value error:" + value);
+                        } else {
+                            Log.d(TAG, "parse borderRadius:" + value);
                         }
                         break;
                     case StringBase.STR_ID_borderTopLeftRadius:

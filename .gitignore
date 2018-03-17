@@ -14,11 +14,15 @@ virtual-common/build/
 compiler/build/
 compiler/bin/
 compiler-tools/bin/
+compiler-tools/build1/
 compiler-tools/template/build/
 compiler-tools/template/*.txt
 compiler-tools/compiler-tools/
+local.properties
 
-jcenterDeploy.gradle
-jcenterInstall.gradle
-compilerJcenterDeploy.gradle
-compilerJcenterInstall.gradle
+#jcenterDeploy.gradle
+#jcenterInstall.gradle
+#compilerJcenterDeploy.gradle
+#compilerJcenterInstall.gradle
+
+deploy_compiler.gradle

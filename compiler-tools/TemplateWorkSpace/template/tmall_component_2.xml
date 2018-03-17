@@ -25,27 +25,30 @@
 
 <VHLayout
         flag="flag_exposure|flag_clickable"
+        action="action"
         orientation="V"
-        layoutWidth="match_parent"
-        layoutHeight="match_parent"
+        layoutWidth="wrap_content"
+        layoutHeight="wrap_content"
+        paddingTop="10"
+        paddingRight="10"
+        paddingBottom="10"
+        paddingLeft="10"
 >
+    <NImage
+            id="1"
+            layoutGravity="h_center"
+            src="${imgUrl}"
+            scaleType="center_crop"
+            layoutMarginBottom="6"
+            layoutWidth="96rp"
+            layoutHeight="96rp"/>
     <VText
-            text="Title: orientation = H | firstSpace = 10rp | lastSpace = 10rp"
+            id="2"
+            layoutGravity="h_center"
+            text="${title}"
             textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
-
-    <Scroller
-            dataTag="${items}"
-            firstSpace="10rp"
-            lastSpace="10rp"
-            lineSpace="10rp"
-            span="5rp"
-            orientation="H"
-            itemWidth="227rp"
-            layoutWidth="match_parent"
-            layoutHeight="285rp" />
+            textColor="@{${titleColor} ? ${titleColor} : #333333 }"
+            layoutWidth="wrap_content"
+            layoutHeight="wrap_content"/>
 
 </VHLayout>
